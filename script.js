@@ -1,23 +1,16 @@
-$.getJSON("https://bootswatch.com/api/3.json", function (data) {
-  var themes = data.themes;
-  var select = $("select");
-  select.show();
-  $(".alert").toggleClass("alert-info alert-success");
-  $(".alert h4").text("Success!");
+var filepicker;
 
-  themes.forEach(function(value, index){
-    select.append($("<option />")
-          .val(index)
-          .text(value.name));
-  });
+var blob = {
+  url: 'https://www.filestackapi.com/api/file/AMltoa8ATECOsFTMduLz',
+  filename: 'hello.txt',
+  mimetype: 'text/plain',
+  isWriteable: true,
+  size: 100
+};
 
-  select.change(function(){
-    var theme = themes[$(this).val()];
-    $("link").attr("href", theme.css);
-    $("h1").text(theme.name);
-  }).change();
-
-}, "json").fail(function(){
-    $(".alert").toggleClass("alert-info alert-danger");
-    $(".alert h4").text("Failure!");
-});
+filepicker.exportFile(
+  blob,
+  function(Blob){
+    console.log(Blob.url);
+  }
+);
