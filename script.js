@@ -4,32 +4,35 @@ $(document).ready(function() {
      $('#nav-tax-returns').click(function() {
           $('#toggle-tax-returns').toggle();
      });
+     filepicker.setKey("A2DtRrZBwRSGFqlZnYeY9z");
 });
 
 
 
-filepicker.setKey("A2DtRrZBwRSGFqlZnYeY9z");
 
-filepicker.pickAndStore(
-  {
-    multiple: true
-  },
-  {},
-  function onSucess(Blob){
-    var json = (JSON.stringify(Blob));
-    var content = JSON.parse(json);
+$(document).ready(function(){
+  $('#filepicker').click(function(e){
 
-    // for (var i=0; i<content.length; i++)
-    console.log(content[0].filename);
-    console.log('sucess');
-  },
-  function onError(FPError){
-    console.log(FPERROR.toString());
-  },
-  function onProgress(FPProgress){
-    console.log('progress');
-  }
-);
+    filepicker.pickAndStore(
+      {multiple: true},
+      {},
+      function onSucess(Blob){
+        var json = (JSON.stringify(Blob));
+        var content = JSON.parse(json);
+
+        $('#toggle-tax-returns').append(content[0].filename + '' + content[0].url);
+        $('#toggle-tax-returns').append(content[0].filename);
+        console.log('success');
+      },
+      function onError(FPError){
+        console.log(FPERROR.toString());
+      },
+      function onProgress(FPProgress){
+        console.log('progress');
+      }
+    );
+  })
+})
 
 
 
