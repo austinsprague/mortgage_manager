@@ -9,14 +9,14 @@
 
     <link rel="stylesheet" href="CSS/style.css">
 
-    <script rel="text/javascript" src="script.js"></script>
+
   </head>
 
 
 
 
   <body>
-    <nav class="navbar navbar-default">
+  <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -25,103 +25,55 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Mortgage eDocs</a>
+      <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-list"></span> Mortgage Doc</a>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Link</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
-      </ul>
-      <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Search</button>
-      </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Log In</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Log In</a></li>
       </ul>
     </div>
   </div>
-</nav>
+  </nav>
 
   <div class="col-md-3">
     <div class="list-group">
-  <a href="#" class="list-group-item active">
-    <span class="badge">2</span>
-    Tax Returns
-  </a>
-  <a href="#" class="list-group-item">
-    <span class="badge">2</span>
-    Pay Stubs
-  </a>
-  <a href="#" class="list-group-item">
-    <span class="badge">1</span>
-    Other proof of income
-  </a>
-  <a href="#" class="list-group-item">
-    <span class="badge">1</span>
-    Employer Letter
-  </a>
-  <a href="#" class="list-group-item">
-    <span class="badge">3</span>
-    Proof of funds
-  </a>
-  <a href="#" class="list-group-item">
-    <span class="badge">1</span>
-    Photo ID
-  </a>
+      <a href="#" class="list-group-item" id="tax-returns">
+        <span class="badge">2</span>
+        Tax Returns
+      </a>
+      <a href="#" class="list-group-item">
+        <span class="badge">2</span>
+        Pay Stubs
+      </a>
+      <a href="#" class="list-group-item">
+        <span class="badge">3</span>
+        Proof of funds
+      </a>
+      <a href="#" class="list-group-item">
+        <span class="badge">1</span>
+        Photo ID
+      </a>
 
-</ul>
+    </div>
   </div>
-</div>
+
+  <div class="filepicker">
+    <!-- <input type="filepicker" name="filepicker" onchange="alert(event.fpfile.url)"> -->
+  </div>
 
 
 
-
-  <script type="text/javascript" src="//api.filestackapi.com/filestack.js"></script>
-
-<input type="filepicker" data-fp-apikey= "Awx7MsxSXQaKhdKMnMhnuz"
-onchange="alert(event.fpfile.url)">
-
+  <!-- <div class="filepicker">
+    <input type="filepicker" data-fp-apikey= "Awx7MsxSXQaKhdKMnMhnuz"
+    onchange="alert(event.fpfile.url)">
+  </div> -->
 
 
-
-
-
-
-    <!-- Filepicker buttons -->
-
-    <script type="text/javascript">
-    (function(a){if(window.filepicker){return}var b=a.createElement("script");b.type="text/javascript";b.async=!0;b.src=("https:"===a.location.protocol?"https:":"http:")+"//api.filepicker.io/v2/filepicker.js";var c=a.getElementsByTagName("script")[0];c.parentNode.insertBefore(b,c);var d={};d._queue=[];var e="pick,pickMultiple,pickAndStore,read,write,writeUrl,export,convert,store,storeUrl,remove,stat,setKey,constructWidget,makeDropPane".split(",");var f=function(a,b){return function(){b.push([a,arguments])}};for(var g=0;g<e.length;g++){d[e[g]]=f(e[g],d._queue)}window.filepicker=d})(document);
-    </script>
-
-    <!-- <input type="filepicker-dragdrop" data-fp-apikey="A2DtRrZBwRSGFqlZnYeY9z" data-fp-mimetypes="*/*" data-fp-container="window" data-fp-multiple="true" onchange="out='';for(var i=0;i<event.fpfiles.length;i++){out+=event.fpfiles[i].url;out+=' '};alert(out)"> -->
-
-    <!-- End filepicker buttons -->
-
-    <!-- <script type="text/javascript" src="//api.filestackapi.com/filestack.js"></script> -->
-
-<input type="filepicker" data-fp-apikey="A2DtRrZBwRSGFqlZnYeY9z"
-onchange="alert(event.fpfile.url)">
-
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script type="text/javascript" src="https://api.filestackapi.com/filestack.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.1.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script rel="text/javascript" src="script.js"></script>
 
 
   </body>
