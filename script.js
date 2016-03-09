@@ -1,29 +1,29 @@
+
+
+
 filepicker.setKey("A2DtRrZBwRSGFqlZnYeY9z");
 
-$(document).ready(function(){
-  $('.list-group-item').click(function(){
-    $('.filepicker').toggle();
-  });
+filepicker.pickAndStore(
+  {
+    multiple: true
+  },
+  {},
+  function onSucess(Blob){
+    var json = (JSON.stringify(Blob));
+    var content = JSON.parse(json);
 
-$('.list-group-item').click(function(){
-  $('.filepicker').
-  filepicker.pickAndStore(
-    {
-      multiple: true
-    },
-    {},
-    function onSucess(Blobs){
-      console.log(JSON.stringify(Blobs));
-      console.log('storing');
-    },
-    function onError(FPError){
-      console.log(FPERROR.toString());
-    },
-    function onProgress(FPProgress){
-      console.log('progress');
-    }
-  );
-}
+    for (var i=0; i<content.length; i++)
+    console.log(content[0].filename);
+    console.log('sucess');
+  },
+  function onError(FPError){
+    console.log(FPERROR.toString());
+  },
+  function onProgress(FPProgress){
+    console.log('progress');
+  }
+
+);
 
 
 
