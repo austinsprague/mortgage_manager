@@ -1,5 +1,12 @@
 
 
+$(document).ready(function() {
+     $('#nav-tax-returns').click(function() {
+          $('#toggle-tax-returns').toggle();
+     });
+});
+
+
 
 filepicker.setKey("A2DtRrZBwRSGFqlZnYeY9z");
 
@@ -12,7 +19,7 @@ filepicker.pickAndStore(
     var json = (JSON.stringify(Blob));
     var content = JSON.parse(json);
 
-    for (var i=0; i<content.length; i++)
+    // for (var i=0; i<content.length; i++)
     console.log(content[0].filename);
     console.log('sucess');
   },
@@ -22,7 +29,6 @@ filepicker.pickAndStore(
   function onProgress(FPProgress){
     console.log('progress');
   }
-
 );
 
 
