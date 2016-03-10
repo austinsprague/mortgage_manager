@@ -3,10 +3,9 @@
   <head>
     <meta charset="utf-8">
 
-
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/paper/bootstrap.min.css" rel="stylesheet" integrity="sha384-2mX2PSpkRSXLQzmNzH3gwK6srb06+OfbDlYjbog8LQuALYJjuQ3+Yzy2JIWNV9rW" crossorigin="anonymous">
     <title></title>
-
+    <link rel="stylesheet" href="CSS/paper.css">
     <link rel="stylesheet" href="CSS/style.css">
 
 
@@ -23,7 +22,7 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-list">
-      </span>Doc-Doc-Goose</a>
+      </span>DOC-DOC-GOOSE</a>
     </div>
 
     <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -36,11 +35,11 @@
 
   <div class="col-md-3">
     <div class="list-group">
-      <a href="#toggle-tax-returns" class="list-group-item" id="nav-tax-returns">
+      <a href="#tax-returns" class="list-group-item" id="nav-tax-returns">
         <span class="badge">2</span>
         Tax Returns
       </a>
-      <a href="#" class="list-group-item" id="nav-pay-stubs">
+      <a href="#pay-stubs" class="list-group-item" id="nav-pay-stubs">
         <span class="badge">2</span>
         Pay Stubs
       </a>
@@ -56,16 +55,55 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-6">
-      <div class="toggle" id="toggle-tax-returns">
-        <button type="button" name="button" id="filepicker">Upload File</button>
-        <h6>Result:</h6>
-        <div class="result" id="result-tax-returns" style ="background-color: grey" width:"100%" height: "10%">
+    <div class="toggle-tax-returns">
+    <div class="col-md-8">
+      <div class="col-md-8">
+        <button type="button" name="button" class="btn btn-warning btn-lg btn-block" id="filepicker">Upload Tax Returns</button>
+        <h6>Successful uploaded files:</h6>
+        <div class="result" id="result-tax-returns">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title">About tax returns</h3>
+          </div>
+          <div class="panel-body">
+            <p>
+              Include: ALL pages AND schedules. The returns will be scrutinized for unreimbursed employee business expenses, self-employment business losses and signs of loan fraud, such as reported income that doesn't match your W-2s.
+            </p>
+            <p>
+              You'll be required to sign IRS Form 4506-T, which allows the lender to get a transcript of the tax return from the IRS.
+            </p>
+            <p>
+              Read more on <a href="http://www.bankrate.com/finance/mortgages/documents-you-need-to-get-a-home-mortgage-1.aspx#ixzz42THpXO57"> Bank Rate
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
+  <div class="row">
+    <div class="col-md-8">
+      <div class="toggle-pay-stubs" >
+        <button type="button" name="button" class="btn btn-info btn-lg btn-block" id="filepicker">Upload Paystubs</button>
+        <div class="col-md-8">
+          <h6>Result:</h6>
+          <div class="result" id="result-pay-stubs">This is the pay stub div
+          </div>
+        </div>
+        <div class="col-md-4">
+          <h6>Result:</h6>
+          <div class="result" id="result-pay-stubs">This is the pay stub div
+          </div>
+        </div>
+
+      </div>
+
+      </div>
+  </div>
 
 
 

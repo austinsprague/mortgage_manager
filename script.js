@@ -1,16 +1,21 @@
 
 $(document).ready(function() {
-     $('.list-group-item').click(function() {
-       $('.toggle').toggle();
+     $('#nav-tax-returns').click(function() {
+       $('.toggle-tax-returns').toggle();
      });
-     filepicker.setKey("A2DtRrZBwRSGFqlZnYeY9z");
+
+     $('#nav-pay-stubs').click(function() {
+       $('.toggle-pay-stubs').toggle();
+     });
 });
+
+filepicker.setKey("A2DtRrZBwRSGFqlZnYeY9z");
 
 var ref = new Firebase("https://doc-doc-goose.firebaseio.com");
 var refTaxReturns = new Firebase("https://doc-doc-goose.firebaseio.com/tax-returns");
 
 $(document).ready(function(){
-  $('#filepicker').click(function(e){
+  $('#filepicker').click(function(){
     filepicker.pickAndStore(
       {multiple: true},
       {},
@@ -47,8 +52,6 @@ refTaxReturns.on('value', function(snapshot){
     // console.log(taxReturnId);
     // console.log(data[taxReturnId]);
     var taxReturn = data[taxReturnId];
-    $('.result').append($('<div><a href="' + taxReturn.url + '">' + taxReturn.filename + '</a></div>'));
-  },
-  function (errorObject){
-    console.log('the read failed' + errorObject)
+    $('#result-tax-returns').append($('<div><a href="' + taxReturn.url + '">' + taxReturn.filename + '</a></div>'));
+  }
 });
