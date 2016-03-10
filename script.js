@@ -1,18 +1,16 @@
 
-
 $(document).ready(function() {
-     $('#nav-tax-returns').click(function() {
-          $('#toggle-tax-returns').toggle();
+     $('.list-group-item').click(function() {
+       $('.toggle').toggle();
      });
      filepicker.setKey("A2DtRrZBwRSGFqlZnYeY9z");
 });
 
-
-
+var ref = new Firebase("https://doc-doc-goose.firebaseio.com");
+var refTaxReturns = new Firebase("https://doc-doc-goose.firebaseio.com/tax-returns");
 
 $(document).ready(function(){
   $('#filepicker').click(function(e){
-
     filepicker.pickAndStore(
       {multiple: true},
       {},
@@ -20,8 +18,11 @@ $(document).ready(function(){
         var json = (JSON.stringify(Blob));
         var content = JSON.parse(json);
 
-        $('#toggle-tax-returns').append(content[0].filename + '' + content[0].url);
-        $('#toggle-tax-returns').append(content[0].filename);
+        refTaxReturns.push({
+          filename: content[0].filename,
+          url: content[0].url
+        });
+
         console.log('success');
       },
       function onError(FPError){
@@ -35,76 +36,23 @@ $(document).ready(function(){
 })
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// $('.filepicker').click(function(){
-//         filepicker.pick(
-//
-//           function(Blob){
-//             console.log("Store successful:", JSON.stringify(Blob));
-//           },
-//           function(Blob){
-//             console.log(JSON.stringify(Blob));
-//           },
-//           function(FPError){
-//             console.log(FPError.toString());
-//           })
-//         filepicker.store(
-//           blob,
-//           {filename: 'cat#1.png'},
-//           function(new_blob){
-//         console.log(JSON.stringify(new_blob));
-//           })
-//           }
-//         )
-//     });
-
-
-
-
-// var blob = {
-//   url: 'https://www.filestackapi.com/api/file/A2DtRrZBwRSGFqlZnYeY9z',
-//   filename: 'cat.png',
-// };
-//
-// // filepicker.pick()
-// console.log("Storing", blob.filename);
-// filepicker.store(
-//   blob,
-//   {filename: 'theCat1.png'},
-//   function(new_blob){
-//     console.log(JSON.stringify(new_blob));
-//   }
-// );
-
-
-
-
-
-
-
-
-
-
-// $(document).ready(function(){
-//   $('.list-group-item').click(function(){
-//     $('.preview').toggle();
-//   });
-//
-// });
+refTaxReturns.on('value', function(snapshot){
+  console.log(snapshot.val());
+  var data = snapshot.val();
+  // {-KCSX2kItRtWt7a5wtob: {sdfsfds}}
+  // [-KCSX2kItRtWt7a5wtob]
+  var keys = Object.keys(data);
+  for (var i = 0; i < keys.length; i++) {
+    var taxReturnId = keys[i];
+    console.log(taxReturnId);
+    console.log(data[taxReturnId]);
+    var taxReturn = data[taxReturnId];
+    console.log(taxReturn);
+    $('.result').append($('<div>' + taxReturn.filename + '</div><img src="' + taxReturn.url + '" />'));
+    // {filename: 'cat.png', url: 'http://sdfsdf'}
+  }
+  console.log(data);
+  },
+  function (errorObject){
+    console.log('the read failed' + errorObject)
+});
