@@ -26,17 +26,17 @@
       </span>Doc-Doc-Goose</a>
     </div>
 
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <!-- <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Log In</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in" id="login"></span> Log In</a></li>
       </ul>
-    </div>
+    </div> -->
   </div>
   </nav>
 
   <div class="col-md-3">
     <div class="list-group">
-      <a href="#" class="list-group-item" id="nav-tax-returns">
+      <a href="#toggle-tax-returns" class="list-group-item" id="nav-tax-returns">
         <span class="badge">2</span>
         Tax Returns
       </a>
@@ -56,25 +56,19 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-6" id="mainContent">
-      <div class="toggle" id="toggle-tax-returns">This is the tax returns Div
+    <div class="col-md-6">
+      <div class="toggle" id="toggle-tax-returns">
         <button type="button" name="button" id="filepicker">Upload File</button>
-
-        <div type="filepicker-preview" data-fp-url="https://www.filestackapi.com/api/file/NT2kc3vXRb2ZRbf2Ynsb" style="width=75%; height=1000px"></div>
-
-  </div>
-
-
-
-
-
-
-
-        <!-- <input type="filepicker"
-        onchange="alert(event.fpfile.url)" id="filepicker"> -->
+        <h6>Result:</h6>
+        <div class="result" id="result-tax-returns" style ="background-color: grey" width:"100%" height: "10%">
+        </div>
+      </div>
     </div>
   </div>
 
+
+
+<!-- <div type="filepicker-preview" data-fp-url="https://www.filestackapi.com/api/file/NT2kc3vXRb2ZRbf2Ynsb" style="width=75%; height=1000px"></div> -->
 
 
 
@@ -93,6 +87,7 @@
     <script type="text/javascript" src="https://api.filestackapi.com/filestack.js"></script>
     <script src="https://code.jquery.com/jquery-2.2.1.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
     <script rel="text/javascript" src="script.js"></script>
 
 
