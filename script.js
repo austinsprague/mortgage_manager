@@ -44,14 +44,10 @@ refTaxReturns.on('value', function(snapshot){
   var keys = Object.keys(data);
   for (var i = 0; i < keys.length; i++) {
     var taxReturnId = keys[i];
-    console.log(taxReturnId);
-    console.log(data[taxReturnId]);
+    // console.log(taxReturnId);
+    // console.log(data[taxReturnId]);
     var taxReturn = data[taxReturnId];
-    console.log(taxReturn);
-    $('.result').append($('<div>' + taxReturn.filename + '</div><img src="' + taxReturn.url + '" />'));
-    // {filename: 'cat.png', url: 'http://sdfsdf'}
-  }
-  console.log(data);
+    $('.result').append($('<div><a href="' + taxReturn.url + '">' + taxReturn.filename + '</a></div>'));
   },
   function (errorObject){
     console.log('the read failed' + errorObject)
