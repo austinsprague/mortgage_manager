@@ -2,84 +2,78 @@
 <html>
   <head>
     <meta charset="utf-8">
-
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/paper/bootstrap.min.css" rel="stylesheet" integrity="sha384-2mX2PSpkRSXLQzmNzH3gwK6srb06+OfbDlYjbog8LQuALYJjuQ3+Yzy2JIWNV9rW" crossorigin="anonymous">
     <title></title>
     <link rel="stylesheet" href="CSS/paper.css">
     <link rel="stylesheet" href="CSS/style.css">
-
-
   </head>
 
-  <body>
-    <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="home.html" ><span class="glyphicon glyphicon-cloud-upload">
-      </span><span > Doc, Doc,</span><em style="font-weight:bold"> Go!</em></a>
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="home.html" ><span class="glyphicon glyphicon-cloud-upload">
+        </span><span > Doc, Doc,</span><em style="font-weight:bold"> Go!</em></a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Menu <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#tax-returns">Tax Returns</a></li>
+              <li><a href="#pay-stubs">Pay Stubs</a></li>
+              <li><a href="#proof-funds">Proof of Funds</a></li>
+              <li><a href="#photo-id">Photo ID</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
     </div>
+  </nav>
 
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Menu <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#tax-returns">Tax Returns</a></li>
-            <li><a href="#pay-stubs">Pay Stubs</a></li>
-            <li><a href="#proof-funds">Proof of Funds</a></li>
-            <li><a href="#photo-id">Photo ID</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-
-<div class="row">
-  <div class="col-md-3">
-    <div class="list-group">
-      <a href="#tax-returns" class="list-group-item" id="nav-tax-returns">
-        <span class="badge" id="badge-tax-returns">3</span>
+  <div class="row">
+    <div class="col-md-3">
+      <div class="list-group">
+        <a href="#tax-returns" class="list-group-item" id="nav-tax-returns">
+        <span class="badge" id="badge-tax-returns">2</span>
         Tax Returns
-      </a>
-      <a href="#pay-stubs" class="list-group-item" id="nav-pay-stubs">
+        </a>
+        <a href="#pay-stubs" class="list-group-item" id="nav-pay-stubs">
         <span class="badge" id="badge-pay-stubs">2</span>
         Pay Stubs
-      </a>
-      <a href="#proof-funds" class="list-group-item" id="nav-proof-funds">
+        </a>
+        <a href="#proof-funds" class="list-group-item" id="nav-proof-funds">
         <span class="badge" id="badge-proof-funds">3</span>
         Proof of funds
-      </a>
-      <a href="#photo-id" class="list-group-item" id="nav-photo-id">
+        </a>
+        <a href="#photo-id" class="list-group-item" id="nav-photo-id">
         <span class="badge" id="badge-photo-id">1</span>
         Photo ID
-      </a>
-
+        </a>
+      </div>
     </div>
-  </div>
 
-  <div class="col-md-8">
-    <div class="col-md-12">
-      <div class="toggle-tax-returns" id="tax-returns">
-        <h3 class="col-md-8">Tax Returns</h3>
-        <div class="col-md-4">
-          <button type="button" name="button" class="btn btn-warning btn-block" id="filepicker-tax-returns"><span class="glyphicon glyphicon-cloud-upload" aria-hidden="true"></span> Upload</button>
-        </div>
-        <div class="col-md-8">
-          <h5>Needs:</h5>
-          <ol>
-            <li class="li-tax-returns">2015 Tax Return. Include: ALL pages and schedules</li>
-            <li class="li-tax-returns">2014 Tax Return. Include: ALL pages and schedules</li>
-          </ol>
-        </div>
-        <div class="col-md-4">
+    <div class="col-md-8">
+      <div class="col-md-12">
+        <div class="toggle-tax-returns" id="tax-returns">
+          <h3 class="col-md-8">Tax Returns</h3>
+          <div class="col-md-4">
+            <button type="button" name="button" class="btn btn-warning btn-block" id="filepicker-tax-returns"><span class="glyphicon glyphicon-cloud-upload" aria-hidden="true"></span> Upload</button>
+          </div>
+          <div class="col-md-8">
+            <h5>Needs:</h5>
+            <ol>
+              <li class="li-tax-returns">2015 Federal Tax Return. Include: ALL pages and schedules</li>
+              <li class="li-tax-returns">2014 Federal Tax Return. Include: ALL pages and schedules</li>
+            </ol>
+          </div>
+          <div class="col-md-4">
           <h5>Successful uploaded files:</h5>
           <div class="result" id="result-tax-returns">
           </div>
@@ -95,9 +89,8 @@
           <div class="col-md-8">
           <h5>Needs:</h5>
             <ol>
-              <li class="li-pay-stubs">Current</li>
-              <li class="li-pay-stubs">Last</li>
-              <li class="li-pay-stubs">Two Last</li>
+              <li class="li-pay-stubs">W-2 forms from the previous two years, if you collect a paycheck, or profit and loss statements or 1099 forms, if you own a business.</li>
+              <li class="li-pay-stubs">Recent paycheck stubs.</li>
             </ol>
           </div>
           <div class="col-md-4">
@@ -116,8 +109,8 @@
           <div class="col-md-8">
             <h5>Needs:</h5>
             <ol>
-              <li class="li-proof-funds">Mama</li>
-              <li class="li-proof-funds">Yo</li>
+              <li class="li-proof-funds">List of assets, including bank statements, mutual fund statements, real estate and automobile titles, brokerage statements and records of other investments or assets.</li>
+              <li class="li-proof-funds">Your Mom</li>
             </ol>
           </div>
           <div class="col-md-4">
@@ -136,9 +129,7 @@
             <div class="col-md-8">
               <h5>Needs:</h5>
               <ol>
-                <li class="li-photo-id">Legit from the US or,</li>
-                <li class="li-photo-id">Your Mom or,</li>
-                <li class="li-photo-id">Money</li>
+                <li class="li-photo-id">Government issued ID or Passport, must be legit from the US</li>
               </ol>
             </div>
             <div class="col-md-4">
@@ -149,8 +140,6 @@
           </div>
         </div>
       </div>
-
-
 
     <!--END of main section  -->
   </div>
