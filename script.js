@@ -1,16 +1,35 @@
+filepicker.setKey("A2DtRrZBwRSGFqlZnYeY9z");
 
-$(document).ready(function() {
-     $('.list-group-item').click(function() {
-       $('.toggle').toggle();
-     });
-     filepicker.setKey("A2DtRrZBwRSGFqlZnYeY9z");
-});
+
 
 var ref = new Firebase("https://doc-doc-goose.firebaseio.com");
 var refTaxReturns = new Firebase("https://doc-doc-goose.firebaseio.com/tax-returns");
+var refPayStubs = new Firebase("https://doc-doc-goose.firebaseio.com/pay-stubs");
+var refProofFunds = new Firebase("https://doc-doc-goose.firebaseio.com/proof-funds");
+var refPhotoId = new Firebase("https://doc-doc-goose.firebaseio.com/photo-id");
 
-$(document).ready(function(){
-  $('#filepicker').click(function(e){
+
+
+
+function ToggleContent(id){
+  var $navId = $('#nav-' + id);
+  var $toggleClass = $('.toggle-' + id);
+
+  $navId.click(function(){
+    $toggleClass.slideToggle('100');
+  });
+}
+
+ToggleContent('tax-returns');
+ToggleContent('pay-stubs');
+ToggleContent('proof-funds');
+ToggleContent('photo-id');
+
+
+
+function Filepicker(firebaseRef, id){
+  var $filepickerId = $('#filepicker-' + id);
+  $filepickerId.click(function(){
     filepicker.pickAndStore(
       {multiple: true},
       {},
@@ -18,11 +37,10 @@ $(document).ready(function(){
         var json = (JSON.stringify(Blob));
         var content = JSON.parse(json);
 
-        refTaxReturns.push({
+        firebaseRef.push({
           filename: content[0].filename,
           url: content[0].url
         });
-
         console.log('success');
       },
       function onError(FPError){
@@ -32,27 +50,34 @@ $(document).ready(function(){
         console.log('progress');
       }
     );
-  })
-})
+  });
+}
+
+Filepicker(refTaxReturns, 'tax-returns');
+Filepicker(refPayStubs,'pay-stubs');
+Filepicker(refProofFunds,'proof-funds');
+Filepicker(refPhotoId,'photo-id');
 
 
-refTaxReturns.on('value', function(snapshot){
-  console.log(snapshot.val());
-  var data = snapshot.val();
-  // {-KCSX2kItRtWt7a5wtob: {sdfsfds}}
-  // [-KCSX2kItRtWt7a5wtob]
-  var keys = Object.keys(data);
-  for (var i = 0; i < keys.length; i++) {
-    var taxReturnId = keys[i];
-    console.log(taxReturnId);
-    console.log(data[taxReturnId]);
-    var taxReturn = data[taxReturnId];
-    console.log(taxReturn);
-    $('.result').append($('<div>' + taxReturn.filename + '</div><img src="' + taxReturn.url + '" />'));
-    // {filename: 'cat.png', url: 'http://sdfsdf'}
-  }
-  console.log(data);
-  },
-  function (errorObject){
-    console.log('the read failed' + errorObject)
-});
+// var $badgeTaxReturn =
+// $('#badge-tax-returns').text($('.li-tax-returns').length)
+
+function Snapshot(firebaseRef, id) {
+  firebaseRef.on('child_added', function(snapshot){
+    var data = snapshot.val();
+    var $resultId = $('#result-' + id);
+    var $badgeId = $('#badge-' + id);
+    var $liId = $('#li-'+ id)
+
+    $resultId.append($('<div><a href="' + data.url + '">' + data.filename + '</a></div>'));
+    // $badgeId.text($resultId.length);
+  });
+}
+
+
+
+
+Snapshot(refTaxReturns, 'tax-returns');
+Snapshot(refPayStubs, 'pay-stubs');
+Snapshot(refProofFunds, 'proof-funds');
+Snapshot(refPhotoId, 'photo-id');
