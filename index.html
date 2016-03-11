@@ -32,95 +32,121 @@
     </div>
   </div>
   </nav>
-
+<div class="row">
   <div class="col-md-3">
     <div class="list-group">
       <a href="#tax-returns" class="list-group-item" id="nav-tax-returns">
-        <span class="badge" id="badge-tax-returns"></span>
+        <span class="badge" id="badge-tax-returns">3</span>
         Tax Returns
       </a>
       <a href="#pay-stubs" class="list-group-item" id="nav-pay-stubs">
         <span class="badge" id="badge-pay-stubs">2</span>
         Pay Stubs
       </a>
-      <a href="#" class="list-group-item">
+      <a href="#proof-funds" class="list-group-item" id="nav-proof-funds">
         <span class="badge" id="badge-proof-funds">3</span>
         Proof of funds
       </a>
-      <a href="#" class="list-group-item">
+      <a href="#photo-id" class="list-group-item" id="nav-photo-id">
         <span class="badge" id="badge-photo-id">1</span>
         Photo ID
       </a>
 
     </div>
   </div>
-  <div class="row">
-    <div class="toggle-tax-returns">
-    <div class="col-md-8">
-      <h3>Tax Returns</h3>
-      <div class="col-md-8">
-        <h5>Needs:</h5>
-        <ol>
-          <li class="li-tax-returns">2015 Tax Return. Include: ALL pages and schedules</li>
-          <li class="li-tax-returns">2014 Tax Return. Include: ALL pages and schedules</li>
-        </ol>
 
-      </div>
+  <div class="col-md-8">
 
-      <div class="col-md-4">
-        <h5>Successful uploaded files:</h5>
-        <div class="result" id="result-tax-returns">
+    <div class="toggle-tax-returns" id="tax-returns">
+      <div class="col-md-12">
+        <h3>Tax Returns</h3>
+        <div class="col-md-8">
+          <h5>Needs:</h5>
+          <ol>
+            <li class="li-tax-returns">2015 Tax Return. Include: ALL pages and schedules</li>
+            <li class="li-tax-returns">2014 Tax Return. Include: ALL pages and schedules</li>
+          </ol>
+        </div>
+        <div class="col-md-4">
+          <h5>Successful uploaded files:</h5>
+          <div class="result" id="result-tax-returns">
+          </div>
+        </div>
+        <div class="col-md-8">
+          <button type="button" name="button" class="btn btn-warning btn-lg btn-block" id="filepicker-tax-returns">Upload Tax Returns</button>
         </div>
       </div>
-      <div class="col-md-8">
-        <button type="button" name="button" class="btn btn-warning btn-lg btn-block" id="filepicker">Upload Tax Returns</button>
-      </div>
     </div>
-  </div>
-    <div class="row">
+
+    <div class="col-md-12" id="pay-stubs">
       <div class="toggle-pay-stubs">
-      <div class="col-md-8">
         <h3>Pay Stubs</h3>
         <div class="col-md-8">
           <h5>Needs:</h5>
-          <ol id= "ol-tax-returns">
-            <li>Current</li>
-            <li>Last</li>
-            <li>Two Last</li>
+          <ol>
+            <li class="li-pay-stubs">Current</li>
+            <li class="li-pay-stubs">Last</li>
+            <li class="li-pay-stubs">Two Last</li>
           </ol>
-
         </div>
-
         <div class="col-md-4">
           <h5>Successful uploaded files:</h5>
           <div class="result" id="result-pay-stubs">
           </div>
         </div>
         <div class="col-md-8">
-          <button type="button" name="button" class="btn btn-warning btn-lg btn-block" id="filepicker">Upload Pay Stubs</button>
+          <button type="button" name="button" class="filepicker btn btn-warning btn-lg btn-block" id="filepicker-pay-stubs">Upload Pay Stubs</button>
         </div>
       </div>
     </div>
 
+      <div class="col-md-12" id="proof-funds">
+        <div class="toggle-proof-funds">
+        <h3>Proof of Funds</h3>
+        <div class="col-md-8">
+          <h5>Needs:</h5>
+          <ol>
+            <li class="li-proof-funds">Your Mom</li>
+            <li class="li-proof-funds">Street Corner</li>
+          </ol>
+        </div>
+        <div class="col-md-4">
+          <h5>Successful uploaded files:</h5>
+          <div class="result" id="result-proof-funds">
+          </div>
+        </div>
+        <div class="col-md-8">
+          <button type="button" name="button" class="btn btn-warning btn-lg btn-block" id="filepicker-proof-funds">Upload Proof of Funds</button>
+        </div>
+      </div>
+    </div>
+
+      <div class="col-md-12" id="photo-id">
+        <div class="toggle-photo-id">
+        <h3>Photo ID</h3>
+        <div class="col-md-8">
+          <h5>Needs:</h5>
+          <ol>
+            <li class="li-photo-id">Legit from the US or,</li>
+            <li class="li-photo-id">Your Mom or,</li>
+            <li class="li-photo-id">Money</li>
+          </ol>
+        </div>
+        <div class="col-md-4">
+          <h5>Successful uploaded files:</h5>
+          <div class="result" id="result-photo-id">
+          </div>
+        </div>
+        <div class="col-md-8">
+          <button type="button" name="button" class="btn btn-warning btn-lg btn-block" id="filepicker-photo-id">Upload Photo ID</button>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!--END of main section  -->
   </div>
-
-
-
-<!-- <div type="filepicker-preview" data-fp-url="https://www.filestackapi.com/api/file/NT2kc3vXRb2ZRbf2Ynsb"></div> -->
-
-
-
-  <!-- <div class="filepicker">
-    <input type="filepicker" name="filepicker" onchange="alert(event.fpfile.url)">
-  </div> -->
-
-
-
-  <!-- <div class="filepicker">
-    <input type="filepicker" data-fp-apikey= "Awx7MsxSXQaKhdKMnMhnuz"
-    onchange="alert(event.fpfile.url)">
-  </div> -->
-
 
     <script type="text/javascript" src="https://api.filestackapi.com/filestack.js"></script>
     <script src="https://code.jquery.com/jquery-2.2.1.js"></script>
