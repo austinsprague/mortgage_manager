@@ -16,7 +16,7 @@ function ToggleContent(id){
   var $toggleClass = $('.toggle-' + id);
 
   $navId.click(function(){
-    $toggleClass.toggle();
+    $toggleClass.slideToggle('100');
   });
 }
 
@@ -70,9 +70,10 @@ function Snapshot(firebaseRef, id) {
     var $liId = $('#li-'+ id)
 
     $resultId.append($('<div><a href="' + data.url + '">' + data.filename + '</a></div>'));
-    $badgeId.text($liId.length);
+    // $badgeId.text($resultId.length);
   });
 }
+
 
 
 
