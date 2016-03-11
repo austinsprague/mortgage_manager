@@ -1,20 +1,14 @@
-.preview {
-  width: 100px;
-  height: 100px;
-  background: #ccc;
-  border: 1px solid #000;
-}
-
-.active {
-  background-color: blue;
+nav {
+  padding: 10px;
 }
 
 .toggle {
     display: none;
 }
 
-#pay-stubs{
-  background-color:;
+
+.list-group {
+  font-size: 16px;
 }
 
 button {

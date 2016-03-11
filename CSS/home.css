@@ -1,0 +1,36 @@
+.image {
+   position: relative;
+   width: 100%; /* for IE 6 */
+
+}
+img {
+  opacity: .4;
+  filter: alpha(opacity=40);
+}
+
+.content {
+   position: absolute;
+   top: 140px;
+   /*left: auto;*/
+   width: 100%;
+
+}
+
+.content h2 {
+  background-color: black;
+  color: white;
+  margin-left: 0;
+
+}
+
+.content span {
+  font-weight: bold;
+}
+
+body {
+  text-align: center;
+}
+
+#checkIt {
+  margin-top: 70px;
+}
