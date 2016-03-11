@@ -74,9 +74,6 @@ function Snapshot(firebaseRef, id) {
   });
 }
 
-
-
-
 Snapshot(refTaxReturns, 'tax-returns');
 Snapshot(refPayStubs, 'pay-stubs');
 Snapshot(refProofFunds, 'proof-funds');
